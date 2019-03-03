@@ -136,21 +136,25 @@ public class GameView
         Log.i(this.getClass().getSimpleName(), "It is now: " + newPeriod);
 
         if (newPeriod == Period.DAY) {
-            if (nightPlayer.isPlaying()) {
+            if (nightPlayer != null && nightPlayer.isPlaying()) {
                 nightPlayer.pause();
                 nightPlayer.seekTo(0); // rewind
             }
             bg = bg_day;
-            dayPlayer.start();
-            dayPlayer.setLooping(true);
+            if (dayPlayer != null) {
+                dayPlayer.start();
+                dayPlayer.setLooping(true);
+            }
         } else if (newPeriod == Period.NIGHT) {
-            if (dayPlayer.isPlaying()) {
+            if (dayPlayer != null && dayPlayer.isPlaying()) {
                 dayPlayer.pause();
                 dayPlayer.seekTo(0); // rewind
             }
             bg = bg_night;
-            nightPlayer.start();
-            nightPlayer.setLooping(true);
+            if (nightPlayer != null) {
+                nightPlayer.start();
+                nightPlayer.setLooping(true);
+            }
         }
 
         onTick(); // to force a draw

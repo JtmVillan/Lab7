@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -95,9 +95,9 @@ public class MainActivity extends Activity {
          *      3. Feed doge and update their state accordingly.
          */
         final View foodMenu = this.findViewById(R.id.FoodMenuView);
-        final Button hamButton       = foodMenu.findViewById(R.id.HamButton),
-                     steakButton     = foodMenu.findViewById(R.id.SteakButton),
-                     turkeyLegButton = foodMenu.findViewById(R.id.TurkeyLegButton);
+        final ImageButton hamButton       = foodMenu.findViewById(R.id.HamButton),
+                          steakButton     = foodMenu.findViewById(R.id.SteakButton),
+                          turkeyLegButton = foodMenu.findViewById(R.id.TurkeyLegButton);
         // hm... should prob do something with this
 
         /**
@@ -116,8 +116,8 @@ public class MainActivity extends Activity {
         /**
          * TODO: Exercise 4 -- The Hunt for Design Flaws
          *
-         * Identify _TWO_ non-trivial design issues, with respect to good enough
-         * design methodology (SRP, OCP, etc), and apply design patterns to solve them.
+         * Identify _ONE_ non-trivial design issue, with respect to good enough design
+         * methodology (SRP, OCP, etc), and apply design pattern(s) to solve it.
          *
          * (Non-trivial means you can't simply extract an interface and change variables to
          * use the interface. There are plenty of issues in this code.)
@@ -171,7 +171,7 @@ public class MainActivity extends Activity {
                         new Coord(getResources().getInteger(R.integer.happy_x),
                                   getResources().getInteger(R.integer.happy_y)));
 
-        // TODO: Exercise 2 - set up coords for SAD state.
+        // TODO: Exercise 1 - set up sprite and coords for SAD state.
         stateBitmaps.put(Doge.State.SLEEPING,
                          BitmapFactory.decodeResource(getResources(), R.drawable.sleeping_2x));
         stateCoords.put(Doge.State.SLEEPING,
