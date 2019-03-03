@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Hover -->
+    <item android:drawable="@drawable/button_2x"
+          android:state_selected="true" />
+
+    <!-- Pressed -->
+    <item android:drawable="@drawable/button_pressed_2x"
+          android:state_pressed="true" />
+
+    <!-- Normal -->
+    <item android:drawable="@drawable/button_2x" />
+</selector>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TODO: Exercise 2 - Increase to 5 so that day lasts longer. o/w will be too short to test -->
+    <!-- **Seconds** per tick -->
+    <integer name="tick_interval">1</integer>
+</resources>

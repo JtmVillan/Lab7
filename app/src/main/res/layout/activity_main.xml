@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MainView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <edu.ucsd.cse110.dogegotchi.GameView
+        android:id="@+id/GameCanvasView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+
+    <TableRow
+        android:id="@+id/FoodMenuView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="600dp"
+        android:gravity="fill_vertical"
+        android:orientation="horizontal"
+        android:visibility="invisible">
+
+        <ImageButton
+            android:id="@+id/HamButton"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="145dp"
+            android:layout_height="82dp"
+            android:background="@drawable/button_effect"
+            android:contentDescription="Feed doge with Ham."
+            android:scaleType="centerInside"
+            android:src="@drawable/ham_2x"
+            tools:src="@drawable/ham_2x" />
+
+        <ImageButton
+            android:id="@+id/SteakButton"
+            android:layout_width="134dp"
+            android:layout_height="82dp"
+            android:background="@drawable/button_effect"
+            android:contentDescription="Feed doge with Steak."
+            android:scaleType="centerInside"
+            android:src="@drawable/steak_2x"
+            tools:src="@drawable/steak_2x" />
+
+        <ImageButton
+            android:id="@+id/TurkeyLegButton"
+            android:layout_width="134dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/button_effect"
+            android:contentDescription="Feed doge with Turkey Leg."
+            android:src="@drawable/turkey_leg_2x"
+            tools:src="@drawable/turkey_leg_2x" />
+
+    </TableRow>
+
+</FrameLayout>
