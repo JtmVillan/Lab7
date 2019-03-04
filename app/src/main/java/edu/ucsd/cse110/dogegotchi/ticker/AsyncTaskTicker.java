@@ -74,10 +74,14 @@ public class AsyncTaskTicker
 
     @Override
     protected Void doInBackground(Void... none) {
+        int counter = 0;
         while (running) {
             try {
                 // do tick
-                publishProgress();
+                if ((++counter % 2) == 0) {
+                    publishProgress();
+                    counter = 0;
+                }
 
                 /**
                  * Refresh canvas every {@link tickInterval} seconds.
