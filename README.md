@@ -1,7 +1,6 @@
-Dogegotchi
+![Icon for the dogetochi app.](https://i.imgur.com/yYvdFYH.png)dogegotchi 
 ==========
 _(aka lab week 9)_
-
 > A simple game inspired by Tamagotchi used in CSE 110 to exercise design patterns.
 
 Turn up your volume before playing.:)
