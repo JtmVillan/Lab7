@@ -20,7 +20,7 @@
         android:layout_marginTop="600dp"
         android:gravity="fill_vertical"
         android:orientation="horizontal"
-        android:visibility="invisible">
+        android:visibility="gone">
 
         <ImageButton
             android:id="@+id/HamButton"
