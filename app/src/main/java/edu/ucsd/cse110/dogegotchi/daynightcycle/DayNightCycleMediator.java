@@ -79,7 +79,9 @@ public class DayNightCycleMediator implements ISubject<IDayNightCycleObserver>, 
         // Notify on first tick per period
         // (This allows notification on very first run!)
         if (this.currentPeriodTickCount == 1) {
-            this.observers.forEach(observer -> observer.onPeriodChange(this.currentPeriod));
+            for(IDayNightCycleObserver observer : this.observers) {
+                observer.onPeriodChange(this.currentPeriod);
+            }
         }
         else if ((currentPeriodTickCount % ticksPerPeriod) == 0) {
             this.currentPeriod = this.currentPeriod.successor();

@@ -3,7 +3,6 @@ package edu.ucsd.cse110.dogegotchi.ticker;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -24,7 +23,7 @@ public class AsyncTaskTicker
     /**
      * Duration, in seconds, of the wait between ticks.
      */
-    private final Duration tickInterval;
+    private final int tickInterval;
 
     /**
      * Constructor.
@@ -36,7 +35,7 @@ public class AsyncTaskTicker
                            final int tickInterval)
     {
         this.observers = observers;
-        this.tickInterval = Duration.ofSeconds(tickInterval);
+        this.tickInterval = tickInterval;
     }
 
     /**
@@ -86,9 +85,9 @@ public class AsyncTaskTicker
                 /**
                  * Refresh canvas every {@link tickInterval} seconds.
                  */
-                Log.i(this.getClass().getSimpleName(), "Sleeping for " + tickInterval.getSeconds() + " seconds.");
-                Thread.sleep(tickInterval.toMillis());
-                Log.i(this.getClass().getSimpleName(), "Slept for " + tickInterval.getSeconds() + " seconds.");
+                Log.i(this.getClass().getSimpleName(), "Sleeping for " + tickInterval + " seconds.");
+                Thread.sleep(tickInterval * 1000);
+                Log.i(this.getClass().getSimpleName(), "Slept for " + tickInterval + " seconds.");
             } catch (InterruptedException e) {
                 Log.e(this.getClass().getSimpleName(), e.getMessage(), e);
             }
@@ -107,6 +106,8 @@ public class AsyncTaskTicker
 
     private void doTick() {
         Log.i(this.getClass().getSimpleName(), "🕰 Tick...");
-        observers.forEach(ITickerObserver::onTick);
+        for (ITickerObserver observer : observers) {
+            observer.onTick();
+        }
     }
 }

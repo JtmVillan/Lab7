@@ -120,7 +120,9 @@ public class GameView
             canvas.drawColor(Color.parseColor("#107594"));
             canvas.drawBitmap(bg, 0, 0, null);
 
-            sprites.forEach(sprite -> sprite.draw(canvas));
+            for (ISprite sprite : sprites) {
+                sprite.draw(canvas);
+            }
         }
     }
 

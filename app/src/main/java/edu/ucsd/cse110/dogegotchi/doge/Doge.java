@@ -102,7 +102,9 @@ public class Doge implements ISubject<IDogeObserver>, ITickerObserver {
     private void setState(final Doge.State newState) {
         this.state = newState;
         Log.i(this.getClass().getSimpleName(), "Doge state changed to: " + newState);
-        this.observers.forEach(observer -> observer.onStateChange(newState));
+        for (IDogeObserver observer : this.observers) {
+            observer.onStateChange(newState);
+        }
     }
 
     /**
