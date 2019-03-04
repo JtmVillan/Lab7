@@ -12,12 +12,10 @@
 
     <!-- TODO: Exercise 2 - Setup EATING coordinates (also set up sprite in MainActivity.java) -->
 
-    <!-- TODO: Exercise 2 - change to 50 when implementing EATING behavior
-               If you set this to a non-zero value before setting up SAD
-               and EATING your program will crash, as DogeView will not
-               find the SAD sprite to draw.
-    -->
-    <!-- Probability of a mood swing. Integer range: [0,100) -->
+
+    <!-- Number of times a mood swing may happen during the day. -->
     <integer name="mood_swings_per_period">5</integer>
+
+    <!-- Probability of a mood swing. Integer range: [0,100) -->
     <integer name="mood_swing_probability">50</integer>
 </resources>

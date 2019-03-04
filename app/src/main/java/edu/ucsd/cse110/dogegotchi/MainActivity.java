@@ -141,8 +141,6 @@ public class MainActivity extends Activity {
     /**
      * Creational logic for Doge and DogeView.
      *
-     * TODO: Exercise 1
-     *
      * Refactor {@link Doge} and/or {@link DogeView} accordingly using the Observer pattern
      * so that our doge goes to sleep at night. When waking up in the morning, the Doge should
      * be {@link edu.ucsd.cse110.dogegotchi.doge.Doge.State#HAPPY}, regardless of previous state.
@@ -178,12 +176,13 @@ public class MainActivity extends Activity {
                         new Coord(getResources().getInteger(R.integer.sleeping_x),
                                   getResources().getInteger(R.integer.sleeping_y)));
 
-        // TODO: Exercise 3 - Set up sprite and coords for EATING state.
-
+        // TODO: Exercise 2 - Set up sprite and coords for EATING state.
+        // TODO: Exercise 3 - You may need to create the Factory of Strategies here
         this.dogeView = new DogeView(this, Doge.State.HAPPY, stateBitmaps, stateCoords);
 
         // make the doge view observe doge's mood swings
         this.doge.register(this.dogeView);
+
     }
 
     @Override
